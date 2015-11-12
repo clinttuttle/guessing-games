@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Learning Javascript</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+
+</head>
+
+
+
+
+
+<body>
+	
+	<h1 id="text">How many fingers are you holding up?</h1>
+	
+	<input id="input"/>
+	
+	<button id="button">Guess!</button>
+	
+	<br>
+	
+	 	
+ 		 	
+ 	<script type="text/javascript">
+ 	 		
+ 		document.getElementById("button").onclick=function() {
+ 		
+			var gotit=false;	//boolean to track when the guess is correct and shut loop off
+			var counter=1; 		//counter for loop to track number of guesses it takes	
+			var x;				//stores the randomly chosen guess
+	
+			var zero = false;
+			var one = false;
+			var two = false;
+			var three = false;
+			var four = false;
+			var five = false;
+	
+				while (gotit==false) {
+	
+					//come up with random number
+					//generate_random_num();
+					
+					x = Math.random()*6;
+					x = Math.floor(x); 
+					
+					//set guess to used
+					if (x==0) {
+						if(zero==false) {
+							zero=true;
+							check_value();
+						} 
+					} 
+
+					if (x==1) {
+						if(one==false) {
+							one=true;
+							check_value();
+						}  
+					} 					
+
+					if (x==2) {
+						if(two==false) {
+							two=true;
+							check_value();
+						}  
+					} 
+
+					if (x==3) {
+						if(three==false) {
+							three=true;
+							check_value();
+						}  
+					} 
+
+					if (x==4) {
+						if(four==false) {
+							four=true;
+							check_value();
+						} 
+					} 					
+
+					if (x==5) {
+						if(five==false) {
+							five=true;
+							check_value();
+						}  
+					} 											
+				} //end while
+	
+				
+				function check_value() {
+					if (x == document.getElementById("input").value) {
+						gotit=true;
+					} else {
+						counter++;			
+				 	} 
+				 }
+
+			if (counter==1) {
+	
+				alert ("I got it!  It was " + x + "!  It took only " + counter + " guess!");
+	
+			} else {
+			
+				alert ("I got it!  It was " + x + "!  It took me only " + counter + " guesses!");
+	
+			}
+	
+			
+
+
+ 		} //end click function
+ 		
+ 		 
+	</script>
+ 
+ 
+ 	  	
+</body>
+</html>

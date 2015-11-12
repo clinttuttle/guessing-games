@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Learning Javascript</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+
+</head>
+
+
+
+
+
+<body>
+	
+	<h1 id="text">Clint's guessing game</h1>
+	
+	<input id="txtGuess" type="text" placeholder="Guess a # b/w 0 and 6"/>
+	<br><br>
+	 	
+ 	<button id="myButton">Submit Guess</button>
+ 	
+ 	<hr>	
+ 	<br>
+	<h3 id="answer">Are you right?</div>
+ 
+ 	
+		 	
+ 		 	
+ 	<script type="text/javascript">
+
+
+		//come up with random number
+		var x=Math.random()*6;
+		x = Math.floor(x);
+		
+		var guess = document.getElementById("txtGuess").value
+
+        var i = 0;
+
+	 	document.getElementById("myButton").onclick =function(){
+
+		var guess = document.getElementById("txtGuess").value
+
+	 		if (x==guess) {
+
+                i= i+1;
+
+	 			document.getElementById("answer").innerHTML = "Yep! You're right."
+
+	 			if (i==1) {
+
+	 			    alert("Correct! It WAS " + x + ".  It took you " + i + " guess too");
+
+	 			} else {
+
+	 			    alert("Correct! It WAS " + x + ".  It took you " + i + " guesses too");
+	 			    
+	 			}
+
+
+
+	 		} else {
+
+	 			document.getElementById("answer").innerHTML = "NOPE! You're wrong."
+	 			alert("Guess again!")
+
+	 			i= i+1;
+
+	  		}
+	 		
+	 			
+	 	 
+	 	} 
+
+	</script>
+ 
+ 
+ 	  	
+</body>
+</html>
